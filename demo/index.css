@@ -1,0 +1,27 @@
+h1 {
+	font-size: 3em;
+}
+h2 {
+	font-size: 1em;
+}
+body{
+	background-color: #111111;
+}
+
+.jumbotron{
+	margin-top: 10vh;
+	color: #DDDDDD;
+	background-color: #222222;
+	height: 80vh;
+}
+
+.react-giphy-search-img{
+	padding: 10px;
+	max-width: 30vw;
+}
+
+.giphy-search-loading > *{
+	display:none;
+	visibility:hidden;
+}
+

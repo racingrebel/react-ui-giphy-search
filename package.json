@@ -46,10 +46,6 @@
     "webpack-dev-server": "^3.1.0",
     "webpack-umd-external": "^1.0.2"
   },
-  "peerDependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
-  },
   "dependencies": {
     "react": "^16.2.0"
   }
