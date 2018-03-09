@@ -1,6 +1,6 @@
 {
   "name": "react-ui-giphy-search",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A react component that you can use to search Giphy for GIFs!",
   "main": "dist/react-ui-giphy-search.min.js",
   "scripts": {
