@@ -1,0 +1,56 @@
+{
+  "name": "react-ui-giphy-search",
+  "version": "0.1.1",
+  "description": "A react module that you can use to search Giphy for GIFs!",
+  "main": "dist/react-ui-giphy-search.min.js",
+  "scripts": {
+    "build": "npm run build-babel && npm run build-dist-dev && npm run build-dist-prod",
+    "build-dist-dev": "NODE_ENV=development ./node_modules/.bin/webpack --progress --config webpack.config --colors",
+    "build-dist-prod": "NODE_ENV=production ./node_modules/.bin/webpack --progress --config webpack.config --colors -p",
+    "build-babel": "babel ./src/giphy-search.jsx --out-file ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-server": "./node_modules/.bin/webpack-dev-server --open --progress --colors --port 8080 --content-base demo/ --config webpack.demo.config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/racingrebel/react-ui-giphy-search.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "gif",
+    "giphy",
+    "search",
+    "ui"
+  ],
+  "author": {
+    "name": "Sergei Grishin",
+    "email": "sergei@racingrebel.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/racingrebel/react-ui-giphy-search/issues"
+  },
+  "homepage": "https://github.com/racingrebel/react-ui-giphy-search",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "prop-types": "^15.6.1",
+    "react-dom": "^16.2.0",
+    "uglifyjs-webpack-plugin": "^1.2.2",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0",
+    "webpack-umd-external": "^1.0.2"
+  },
+  "peerDependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "dependencies": {
+    "react": "^16.2.0"
+  }
+}
