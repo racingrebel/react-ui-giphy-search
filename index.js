@@ -82,6 +82,9 @@ var GiphySearch = function (_React$Component) {
                 error = _state.error,
                 results = _state.results,
                 loaded = _state.loaded;
+            var _props2 = this.props,
+                autofocus = _props2.autofocus,
+                searchPlaceholder = _props2.searchPlaceholder;
 
             var resultsComponent = void 0;
             if (error) {
@@ -108,7 +111,7 @@ var GiphySearch = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'giphy-search' },
-                _react2.default.createElement(_giphySearchBar2.default, { autofocus: this.props.autofocus, placeholder: this.props.searchPlaceholder, onHandleSearch: this.handleSearch }),
+                _react2.default.createElement(_giphySearchBar2.default, { autofocus: autofocus, placeholder: searchPlaceholder, onHandleSearch: this.handleSearch }),
                 resultsComponent
             );
         }
@@ -123,7 +126,8 @@ GiphySearch.defaultProps = {
     maxRating: 'pg-13',
     limit: '5',
     lang: 'en',
-    autofocus: false
+    autofocus: false,
+    searchPlaceholder: null
 };
 
 GiphySearch.propTypes = {

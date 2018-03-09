@@ -29,6 +29,7 @@ class GiphySearch extends React.Component {
     }
     render() {
         const {error, results, loaded} = this.state;
+        const {autofocus, searchPlaceholder} = this.props;
         let resultsComponent;
         if(error){
             return <div class="giphy-search-error">Error: {this.error}</div>
@@ -41,7 +42,7 @@ class GiphySearch extends React.Component {
         }
         return (
             <div className="giphy-search">
-                <GiphySearchBar autofocus={this.props.autofocus} placeholder={this.props.searchPlaceholder} onHandleSearch={this.handleSearch}/>
+                <GiphySearchBar autofocus={autofocus} placeholder={searchPlaceholder} onHandleSearch={this.handleSearch}/>
                 {resultsComponent}
             </div>
         );
@@ -52,7 +53,8 @@ GiphySearch.defaultProps = {
     maxRating: 'pg-13',  
     limit: '5',
     lang: 'en',
-    autofocus: false
+    autofocus: false,
+    searchPlaceholder: null
 };
 
 GiphySearch.propTypes = {
