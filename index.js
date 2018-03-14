@@ -62,9 +62,12 @@ var GiphySearch = function (_React$Component) {
                 apiKey = _props.apiKey,
                 maxRating = _props.maxRating,
                 limit = _props.limit,
-                lang = _props.lang;
+                lang = _props.lang,
+                https = _props.https;
 
-            fetch('http://api.giphy.com/v1/gifs/search?q=' + searchTerm + '&api_key=' + apiKey + '&limit=' + limit + '&lang=' + lang + '&rating=' + maxRating).then(function (res) {
+            var httpPrefix = https ? 'https' : 'http';
+            var apiEndpoint = 'api.giphy.com/v1/gifs/search';
+            fetch(httpPrefix + '://' + apiEndpoint + '?q=' + searchTerm + '&api_key=' + apiKey + '&limit=' + limit + '&lang=' + lang + '&rating=' + maxRating).then(function (res) {
                 return res.json();
             }).then(function (res) {
                 var results = res.data.map(function (gif) {
@@ -127,7 +130,8 @@ GiphySearch.defaultProps = {
     limit: '5',
     lang: 'en',
     autofocus: false,
-    searchPlaceholder: null
+    searchPlaceholder: null,
+    https: false
 };
 
 GiphySearch.propTypes = {
@@ -136,7 +140,8 @@ GiphySearch.propTypes = {
     limit: _propTypes2.default.number,
     lang: _propTypes2.default.string,
     searchPlaceholder: _propTypes2.default.string,
-    autofocus: _propTypes2.default.bool
+    autofocus: _propTypes2.default.bool,
+    https: _propTypes2.default.bool
 };
 
 exports.default = GiphySearch;

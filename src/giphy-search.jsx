@@ -18,8 +18,10 @@ class GiphySearch extends React.Component {
       this.fetchGifs(searchTerm);
     }
     fetchGifs(searchTerm){
-        const {apiKey, maxRating, limit, lang} = this.props;
-        fetch(`http://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=${apiKey}&limit=${limit}&lang=${lang}&rating=${maxRating}`)
+        const {apiKey, maxRating, limit, lang, https} = this.props;
+        const httpPrefix = https ? 'https' : 'http';
+        const apiEndpoint = 'api.giphy.com/v1/gifs/search';
+        fetch(`${httpPrefix}://${apiEndpoint}?q=${searchTerm}&api_key=${apiKey}&limit=${limit}&lang=${lang}&rating=${maxRating}`)
         .then((res) => res.json())
         .then((res) => {
             const results = res.data.map((gif) => gif.images.preview_gif.url); //results will contain urls of all gifs
@@ -54,7 +56,8 @@ GiphySearch.defaultProps = {
     limit: '5',
     lang: 'en',
     autofocus: false,
-    searchPlaceholder: null
+    searchPlaceholder: null,
+    https: false
 };
 
 GiphySearch.propTypes = {
@@ -63,7 +66,8 @@ GiphySearch.propTypes = {
     limit: PropTypes.number,
     lang: PropTypes.string,
     searchPlaceholder: PropTypes.string,
-    autofocus: PropTypes.bool
+    autofocus: PropTypes.bool,
+    https: PropTypes.bool
 };
 
 export default GiphySearch;
