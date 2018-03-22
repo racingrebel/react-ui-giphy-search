@@ -5,6 +5,8 @@
 A react component that you can use to search GIPHY for GIFs!
 
 ## Newest Features
+
+* 0.1.7 - Reduced library size.
 * 0.1.6 - Added HTTPS support.
 
 ## Overview
