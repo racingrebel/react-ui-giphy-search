@@ -1,30 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'; // eslint-disable-line import/no-extraneous-dependencies
 
-class GiphySearchResults extends React.Component {
-   constructor(props) {
-      super(props);
-   }
-   render() {
-      const results = this.props.results;
-      if(results){
-         return (
-            <div className='react-giphy-search-img-container'>
-               {results.map((gifURL) => (
-                  <img key={gifURL} src={gifURL} className='react-giphy-search-img'></img>
-               ))}
-         </div>
-         );
-      }
-      else{
-         return null
-      }
-
-   }
-}
+const GiphySearchResults = (props) => {
+  const { results } = props;
+  if (results) {
+    return (
+      <div className="react-giphy-search-img-container">
+        {results.map(gifURL =>
+          // eslint-disable-next-line
+          <img key={gifURL} src={gifURL} className="react-giphy-search-img" />)}
+      </div>);
+  }
+  return null;
+};
 
 GiphySearchResults.propTypes = {
-    results: PropTypes.array
+  results: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default GiphySearchResults;
